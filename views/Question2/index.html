@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 | 14</title>
+
+    <style>
+        body{
+            background-color: #18122B;
+            color: whitesmoke;
+        }
+        .card{
+            background-color: #443C68;
+        }
+        body {
+            height: 60vh;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        ol {
+            padding: 0;
+            margin: 2rem;
+        }
+
+        li {
+            display: grid;
+            align-items: center;
+            padding: 0.5rem 0;
+            box-sizing: border-box;
+            max-width: 400px;
+        }
+
+        li + li {
+            border-top: 1px solid rgba(100, 100, 100, 0.5);
+        }
+
+        li a {
+            text-decoration: none;
+            font-family: consolas, sans-serif;
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Tutorial 14</h2>
+        <ol>
+            <a href=""></a>
+        </ol>
+    </main>
+
+    <script>
+        const links = [
+            {
+                label: "Student Class",
+                url: "./Student.php"
+            },
+            {
+                label: "Teacher Class",
+                url: "./Teacher.php",
+            },
+        ];
+
+        const ol = document.querySelector("ol");
+
+        for (const item of links) {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.setAttribute("href", item.url);
+            a.textContent = item.label;
+            li.appendChild(a);
+
+            ol.appendChild(li);
+        }
+
+    </script>
+</body>
+</html>

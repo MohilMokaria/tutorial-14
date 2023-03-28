@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>POST Method - AJAX</title>
+</head>
+<body>
+    <h1>POST method using AJAX</h1>
+    <form id="myForm">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <br />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <br />
+        <input type="button" value="Submit" id="submit">
+    </form>
+
+    <div id="result"></div>      
+</body>
+<script>
+    $(document).ready(function() {
+        $('#submit').click(function() {
+            var name = $('#name').val();
+            var email = $('#email').val();
+            $.post('processData.php', {name: name, email: email}, function(data) {
+                $('#result').html(data);
+            });
+        });
+    });
+</script>
+</html>
